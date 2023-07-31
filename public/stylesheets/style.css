@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/gym.css');
 
 * {
   padding: 0;
   margin: 0;
   font-family: 'Bebas Neue', sans-serif;
   box-sizing: border-box;
+  color: white;
 }
 
 body {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  background-color: black;
+  scroll-behavior: smooth;
 }
+
 @keyframes fadeInAnimation {
   0% {
       opacity: 0;
@@ -40,8 +45,10 @@ a {
   background-position: center; 
   position: relative;
   height: 500px;
-  
+}
 
+section {
+  scroll-snap-align: start; 
 }
 
 .heading {
@@ -55,6 +62,7 @@ a {
 .nav-wrapper li {
   list-style-type: none;
   padding: 0 16px;
+  margin-right: 10px;
   font-size: 24px;
 
 }
@@ -66,7 +74,95 @@ a {
   align-items: center;
 }
 
+a {
+  background-image: linear-gradient(
+    to right,
+    #34f765,
+    #34f765 50%,
+    #ffffff 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-section a:before {
+  content: '';
+  background: #34f765;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+/* ABOUT SECTION  */
+
+.about-section {
+  margin-top: 20px;
+  background-image: url("/images/about-background.jpg");
+  background-size: cover; 
+  background-position: center; 
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 5px;
+  padding-bottom: 35px;
+}
+
+.text-container {
+  background-color: rgba(0, 0, 0, 0.521);
+  border-radius: 5px;
+  padding: 10px; 
+  overflow: hidden; 
+}
+
+.text-container p {
+  color: white;
+}
 
 
+.main-section a:hover {
+ background-position: 0;
+}
 
+.main-section a:hover::before {
+  width:100%;
+}
+
+.part {
+  clear: both;
+  padding: 20px;
+  
+}
+
+.part img {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.part:nth-child(even) img {
+  float: right;
+}
+
+.part p {
+  margin: 0;
+}
+
+.icon-border {
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.about-header {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 40px;
+}
 

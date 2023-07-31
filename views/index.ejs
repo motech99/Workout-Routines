@@ -2,12 +2,11 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
   </head>
   <body class="loaded">
     <section>
       <div class="main-section">
-
         <nav>
           <div class="heading">
             <h1>
@@ -16,13 +15,50 @@
           </div>
           <div class="nav-wrapper">
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#" class="button">Login</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="/auth/google" class="button">Login</a></li>
             </div>
-            </section>
-        </ul>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <!-- About Section -->
+    <h1 class="about-header" id="about">About Workout Tracker</h1>
+
+    <section id="about" class="about-section">
+
+      <div class="part">
+          
+        <img class="icon-border" src="/images/gym-icon.png" alt="Image 1">
+        <div class="text-container">
+
+          <p>Our website is dedicated to empowering users in their fitness journey. With our Workout Tracker, you can effortlessly monitor and record your daily workout routines, as well as keep track of your personal records (PR). Stay motivated by seeing your progress over time and challenge yourself to beat your best.</p>
+        </div>
       </div>
-    </nav>
-    <p></p>
-  </body>
-</html>
+      
+      <div class="part">
+        <div class="image-container">
+
+          <img class="icon-border" src="/images/calendar-icon.png" alt="Image 2">
+          <div class="text-container">
+
+            <p>
+              Track your daily workouts effortlessly and start each week fresh with our interactive Workout Archive feature. Stay in control of your fitness routine, log exercises, and monitor your progress seamlessly. Embrace a new week with a clean slate and take on new challenges to achieve your fitness goals.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="part">
+        <div class="image-container">
+
+          <img class="icon-border" src="/images/exercise-icon.png" alt="Image 3">
+          <div class="text-container">
+
+            <p>What are you waiting for? Start tracking your workouts now and take charge of your fitness journey! Our user-friendly Workout Tracker is here to help you stay motivated and achieve your fitness goals. Don't miss out on the benefits of keeping a record of your progress. Get started today and see the amazing results firsthand!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="/javascripts/script.js"></script>
+    </body>
+    </html>
