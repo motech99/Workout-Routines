@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Planner</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1>Add a New Exercise</h1>
+
+<form method="POST" action="/exercises">
+    <label for="name">Exercise Name:</label>
+    <input type="text" name="name" id="name">
+
+    <label for="muscle">Muscle Group:</label>
+    <select name="muscle" id="muscle">
+        <option value="abdominals">Abdominals</option>
+        <option value="abductors">Abductors</option>
+        <!-- Add other muscle group options here -->
+    </select>
+
+    <label for="difficulty">Difficulty:</label>
+    <select name="difficulty" id="difficulty">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <!-- Add other difficulty options here -->
+    </select>
+
+    <button type="submit">Add Exercise</button>
+</form>
