@@ -45,7 +45,7 @@
       <label for="workouts">Select Workouts:</label>
       <!-- Loop through workouts to display checkboxes -->
       <% workouts.forEach(workout => { %>
-        <input type="checkbox" name="workouts[]" value="<%= workout._id %>">
+        <input type="checkbox" name="workouts" value="<%= workout._id %>">
         <span><%= workout.name %></span><br>
       <% }); %>
     </div>

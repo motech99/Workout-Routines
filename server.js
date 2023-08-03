@@ -8,6 +8,7 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 var MongoStore = require('connect-mongo');
 
+
 require('dotenv').config();
 
 require('./config/database');

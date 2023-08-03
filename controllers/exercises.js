@@ -1,10 +1,9 @@
 const Workout = require('../models/workout');
 
-
 async function index(req, res) {
   try {
     const workouts = await Workout.find({});
-    res.render("workouts/exercise", { workouts });
+    res.render("workouts/exercise", { workouts, req });
   } catch (err) {
     console.log(err);
     res.status(500).json({
@@ -25,6 +24,7 @@ async function create(req, res) {
       muscle: req.body.muscle,
       difficulty: req.body.difficulty,
       date: new Date(req.body.date),
+      createdBy: req.user._id, // Add the user ID to the workout data
     };
 
     await Workout.create(workoutData);
@@ -38,8 +38,14 @@ async function create(req, res) {
 async function deleteWorkout(req, res) {
   const workoutId = req.params.id;
   try {
-    // Find the workout by its ID and remove it
-    await Workout.findByIdAndRemove(workoutId);
+    // Find the workout by its ID and createdBy field
+    const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
+    if (!workout) {
+      return res.status(404).json({ message: 'Workout not found' });
+    }
+
+    // Remove the workout
+    await workout.deleteOne();
     res.redirect('/workouts/exercise');
   } catch (err) {
     console.error(err);
@@ -52,7 +58,12 @@ async function deleteWorkout(req, res) {
 async function editForm(req, res) {
   const workoutId = req.params.id;
   try {
-    const workout = await Workout.findById(workoutId);
+    // Find the workout by its ID and createdBy field
+    const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
+    if (!workout) {
+      return res.status(404).json({ message: 'Workout not found' });
+    }
+
     res.render('workouts/edit', { workout });
   } catch (err) {
     console.error(err);
@@ -65,14 +76,19 @@ async function editForm(req, res) {
 async function update(req, res) {
   const workoutId = req.params.id;
   try {
-    const updatedWorkoutData = {
-      name: req.body.name,
-      muscle: req.body.muscle,
-      difficulty: req.body.difficulty,
-      date: new Date(req.body.date),
-    };
+    // Find the workout by its ID and createdBy field
+    const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
+    if (!workout) {
+      return res.status(404).json({ message: 'Workout not found' });
+    }
 
-    await Workout.findByIdAndUpdate(workoutId, updatedWorkoutData);
+    // Update the workout
+    workout.name = req.body.name;
+    workout.muscle = req.body.muscle;
+    workout.difficulty = req.body.difficulty;
+    workout.date = new Date(req.body.date);
+    await workout.save();
+
     res.redirect('/workouts/exercise');
   } catch (err) {
     console.error(err);
@@ -87,4 +103,4 @@ module.exports = {
   delete: deleteWorkout,
   editForm,
   update
-};
+}

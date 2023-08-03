@@ -3,7 +3,7 @@ const Workout = require('../models/workout');
 
 async function index(req, res) {
   try {
-    const routines = await Routine.find({});
+    const routines = await Routine.find({}).populate('workouts');
     res.render('routines/training', { routines });
   } catch (err) {
     console.error(err);
@@ -23,14 +23,8 @@ async function newRoutine(req, res) {
 
 async function createRoutine(req, res) {
   try {
-    const routineData = {
-      name: req.body.name,
-      sets: req.body.sets,
-      reps: req.body.reps,
-      workouts: req.body.workouts, // Array of Workout IDs
-    };
-
-    await Routine.create(routineData);
+    console.log(req.body);
+    await Routine.create(req.body);
     res.redirect('/routines');
   } catch (err) {
     console.error(err);
@@ -39,38 +33,41 @@ async function createRoutine(req, res) {
 }
 
 async function editRoutine(req, res) {
-  try {
-    const routine = await Routine.findById(req.params.id).populate('workouts');
-    const workouts = await Workout.find({});
-    res.render('routines/edit', { routine, workouts });
-  } catch (err) {
-    console.error(err);
-    res.render('error', { errorMsg: err.message });
-  }
-}
-
-async function updateRoutine(req, res) {
-  try {
-    const routine = await Routine.findByIdAndUpdate(req.params.id, req.body);
-    res.redirect('/routines/training');
-  } catch (err) {
-    console.error(err);
-    res.render('routines/edit', { errorMsg: err.message });
-  }
-}
-
-async function deleteRoutine(req, res) {
-  try {
-    const routine = await Routine.findByIdAndDelete(req.params.id);
-    if (!routine) {
-      throw new Error('Routine not found');
+    const routineId = req.params.id;
+    try {
+      const routine = await Routine.findById(routineId);
+      const workouts = await Workout.find({});
+      res.render('routines/edit', { routine, workouts });
+    } catch (err) {
+      console.error(err);
+      res.render('error', { errorMsg: err.message });
     }
-    res.redirect('/routines/training');
-  } catch (err) {
-    console.error(err);
-    res.render('error', { errorMsg: err.message });
   }
-}
+  
+  async function updateRoutine(req, res) {
+    const routineId = req.params.id;
+    try {
+      await Routine.findByIdAndUpdate(routineId, req.body);
+      res.redirect('/routines');
+    } catch (err) {
+      console.error(err);
+      const routine = await Routine.findById(routineId);
+      const workouts = await Workout.find({});
+      res.render('routines/edit', { routine, workouts, errorMsg: err.message });
+    }
+  }
+  
+  async function deleteRoutine(req, res) {
+    const routineId = req.params.id;
+    console.log("Deleting routine with ID:", routineId); // Add this line
+    try {
+      await Routine.findByIdAndRemove(routineId);
+      res.redirect('/routines');
+    } catch (err) {
+      console.error(err);
+      res.render('error', { errorMsg: err.message });
+    }
+  }
 
 module.exports = {
   index,
@@ -78,5 +75,6 @@ module.exports = {
   new: newRoutine,
   edit: editRoutine,
   update: updateRoutine,
-  delete: deleteRoutine,
+  delete: deleteRoutine
+ 
 };

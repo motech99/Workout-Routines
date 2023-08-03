@@ -33,4 +33,10 @@ req.logout(function() {
 });
 });
 
+
+
+
+
+
+
 module.exports = router;

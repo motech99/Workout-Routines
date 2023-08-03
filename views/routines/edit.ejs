@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Routine</title>
+
   <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body class="loaded">
@@ -11,46 +12,47 @@
     <div class="main-section">
       <nav>
         <div class="heading">
+          <!-- Main heading for the page -->
           <h1>Workout Plans</h1>
         </div>
         <div class="nav-wrapper">
           <ul>
-            <li><a href="/routines/">Back to Training</a></li>
-            <li><a href="/workouts" class="button">back</a></li>
+            <!-- Link to go back to routines -->
+            <li><a href="/routines" class="button">back</a></li>
           </ul>
         </div>
       </nav>
     </div>
   </section>
-  <section>
-    <h1>Edit Routine</h1>
+  <!-- Secondary heading for the edit form -->
+  <h1>Edit Routine</h1>
 
-    <form action="/routines/<%= routine._id %>?_method=PUT" method="POST">
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<%= routine.name %>" required>
-      </div>
-      <div>
-        <label for="sets">Sets:</label>
-        <input type="number" id="sets" name="sets" value="<%= routine.sets %>" required>
-      </div>
-      <div>
-        <label for="reps">Reps:</label>
-        <input type="text" id="reps" name="reps" value="<%= routine.reps %>" pattern="^\d+(\-\d+)?$" required>
-      </div>
-      <div>
-        <label for="workouts">Select Workouts:</label>
-        <% workouts.forEach(workout => { %>
-          <input type="checkbox" name="workouts[]" value="<%= workout._id %>"
-            <% if (routine.workouts.includes(workout._id)) { %> checked <% } %>>
-          <span><%= workout.name %></span><br>
-        <% }); %>
-      </div>
-      <button type="submit">Update Routine</button>
-    </form>
-    
-
-    </form>
-  </section>
+  <!-- Form to edit an existing routine -->
+  <form action="/routines/<%= routine._id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<%= routine.name %>" required>
+    </div>
+    <div>
+      <label for="sets">Sets:</label>
+      <input type="number" id="sets" name="sets" value="<%= routine.sets %>" required>
+    </div>
+    <div>
+      <label for="reps">Reps:</label>
+      <input type="text" id="reps" name="reps" value="<%= routine.reps %>" pattern="^\d+(\-\d+)?$" required>
+    </div>
+    <div>
+      <label for="workouts">Select Workouts:</label>
+      <!-- Loop through workouts to display checkboxes -->
+      <% workouts.forEach(workout => { %>
+        <input type="checkbox" name="workouts" value="<%= workout._id %>"
+          <% if (routine.workouts.includes(workout._id)) { %> checked <% } %>>
+        <span><%= workout.name %></span><br>
+      <% }); %>
+    </div>
+    <!-- Button to submit the form and update the routine -->
+    <button type="submit">Update Routine</button>
+  </form>
 </body>
 </html>
