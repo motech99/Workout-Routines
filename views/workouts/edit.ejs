@@ -21,7 +21,7 @@
         </div>
       </nav>
     </section>
-    <form method="post" action="/workouts/exercise/<%= workout._id %>?_method=PUT">
+    <form  action="/workouts/exercise/<%= workout._id %>?_method=PUT" method="POST">
         <label for="name">Exercise Name:</label>
         <input type="text" name="name" id="name" value="<%= workout.name %>">
     

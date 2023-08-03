@@ -23,7 +23,7 @@
       </nav>
     </section>
     <section>
-      <h1>Workouts</h1>
+      <h1 class="title-size">Workouts</h1>
       <table>
       <tr>
         <th>Exercise Name</th>
@@ -39,7 +39,7 @@
           <td><%= m.difficulty %></td>
           <td><%= (new Date(m.date)).toString().split(' ').slice(0, 5).join(' ') %></td>
           <td>
-            <form method="post" action="/workouts/exercise/<%= m._id %>?_method=DELETE">
+            <form action="/workouts/exercise/<%= m._id %>?_method=DELETE" method="POST">
               <button class="btn-2" type="submit">Delete</button>
             </form>
             <form method="get" action="/workouts/exercise/<%= m._id %>/edit">
