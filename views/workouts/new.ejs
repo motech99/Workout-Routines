@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Routine</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body class="loaded">
+    <!-- Header Section -->
     <section>
       <div class="main-section">
+        <!-- Navigation -->
         <nav>
+          <!-- Heading -->
           <div class="heading">
             <h1>Add Workout</h1>
           </div>
+          <!-- Navigation Links -->
           <div class="nav-wrapper">
             <ul>
               <li><a href="/workouts" class="button">back</a></li>
-            </div>
-          </ul>
-        </div>
-      </nav>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </section>
-<h1 class="title-size">Add a New Exercise</h1>
-<form method="post" action="/workouts">
-    <label for="name">Exercise Name:</label>
-    <input type="text" name="name" id="name">
-  
-    <label for="muscle">Muscle Group:</label>
-    <select name="muscle" id="muscle">
+
+    <!-- Main Content -->
+    <h1 class="title-size">Add a New Exercise</h1>
+    <!-- Exercise Form -->
+    <form method="post" action="/workouts">
+      <label for="name">Exercise Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="muscle">Muscle Group:</label>
+      <select name="muscle" id="muscle">
+        <!-- Include Muscle Group Options -->
         <%- include('../partials/muscle') %>
-    </select>
-  
-    <label for="difficulty">Difficulty:</label>
-    <select name="difficulty" id="difficulty">
+      </select>
+
+      <label for="difficulty">Difficulty:</label>
+      <select name="difficulty" id="difficulty">
+        <!-- Include Difficulty Options -->
         <%- include('../partials/difficulty') %>
-    </select>
-  
-    <label for="date">Date</label>
-    <input type="datetime-local" name="date" id="date">
-    <div class="btn-size">
-      <button class="btn-2 btn-new" type="submit">Add Workout</button>
-    </div>
-  </form>
-  
-</body>
-</html>  
+      </select>
+
+      <label for="date">Date</label>
+      <input type="datetime-local" name="date" id="date" />
+      <!-- Submit Button -->
+      <div class="btn-size">
+        <button class="btn-2 btn-new" type="submit">Add Workout</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://unpkg.com/css.gg@2.0.0/icons/css/gym.css');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://unpkg.com/css.gg@2.0.0/icons/css/gym.css");
 
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   box-sizing: border-box;
   color: white;
 }
@@ -19,10 +19,10 @@ body {
 
 @keyframes fadeInAnimation {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -41,14 +41,14 @@ a {
 
 .main-section {
   background-image: url("/images/background.jpg");
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   position: relative;
   height: 500px;
 }
 
 section {
-  scroll-snap-align: start; 
+  scroll-snap-align: start;
 }
 
 .heading {
@@ -58,13 +58,11 @@ section {
   margin-left: 30px;
 }
 
-
 .nav-wrapper li {
   list-style-type: none;
   padding: 0 16px;
   margin-right: 10px;
   font-size: 24px;
-
 }
 .nav-wrapper ul {
   display: flex;
@@ -92,7 +90,7 @@ a {
 }
 
 .main-section a:before {
-  content: '';
+  content: "";
   background: #34f765;
   display: block;
   position: absolute;
@@ -107,8 +105,8 @@ a {
 .about-section {
   margin-top: 20px;
   background-image: url("/images/about-background.jpg");
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   margin-left: 10%;
   margin-right: 10%;
   border-radius: 5px;
@@ -118,27 +116,25 @@ a {
 .text-container {
   background-color: rgba(0, 0, 0, 0.521);
   border-radius: 5px;
-  padding: 10px; 
-  overflow: hidden; 
+  padding: 10px;
+  overflow: hidden;
 }
 
 .text-container p {
   color: white;
 }
 
-
 .main-section a:hover {
- background-position: 0;
+  background-position: 0;
 }
 
 .main-section a:hover::before {
-  width:100%;
+  width: 100%;
 }
 
 .part {
   clear: both;
   padding: 20px;
-  
 }
 
 .part img {
@@ -166,11 +162,9 @@ a {
   font-size: 40px;
 }
 
-.workout-section--library  {
+.workout-section--library {
   background-color: black;
 }
-
-
 
 table {
   width: 100%;
@@ -182,9 +176,9 @@ td {
 }
 
 form {
-  display: inline; 
-  margin: 0; 
-  padding: 0; 
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .btn-2,
@@ -206,8 +200,6 @@ form {
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   padding: 0;
 }
-
-
 
 .btn-2:disabled {
   cursor: default;
@@ -238,19 +230,19 @@ form {
 .btn-new {
   font-size: 18px;
   margin: 5px;
-  }
+}
 
 input {
   color: black;
 }
 
-/* Center text within table cells */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 8px;
   font-size: 18px;
@@ -270,7 +262,7 @@ input {
 }
 
 select {
-  color: black; 
+  color: black;
   font-size: 18px;
   text-align: center;
 }
@@ -284,16 +276,15 @@ select {
 
 .button-container {
   display: flex;
-  gap: 10px; 
+  gap: 10px;
   justify-content: center;
 }
 button,
 .btn-2 {
-  display: inline-block; 
+  display: inline-block;
   margin: 0;
   font-size: 20px;
 }
-
 
 .edit-form label,
 .edit-form input[type="text"],
@@ -310,5 +301,5 @@ button,
 .btn-size {
   display: flex;
   margin-top: 10px;
- margin-left: 10px;
+  margin-left: 10px;
 }

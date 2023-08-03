@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body class="loaded">
+    <!-- Header Section -->
     <section>
       <div class="main-section">
+        <!-- Navigation -->
         <nav>
+          <!-- Heading -->
           <div class="heading">
             <h1>All Workouts</h1>
           </div>
+          <!-- Navigation Links -->
           <div class="nav-wrapper">
             <ul>
+              <li><a href="../routines/" class="button">Add Routine</a></li>
               <li><a href="/workouts/new" class="button">Add a Workout</a></li>
               <li><a href="/workouts" class="button">back</a></li>
-            </div>
-          </ul>
-        </div>
-      </nav>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </section>
+
+    <!-- Main Content Section -->
     <section>
       <h1 class="title-size">Workouts</h1>
+      <!-- Table of Workouts -->
       <table>
-      <tr>
-        <th>Exercise Name</th>
-        <th>Muscle Group</th>
-        <th>Difficulty</th>
-        <th>Date</th>
-        <th>Actions</th>
-      </tr>
-      <% workouts.forEach(m => { %>
+        <tr>
+          <th>Exercise Name</th>
+          <th>Muscle Group</th>
+          <th>Difficulty</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+        <!-- Loop through workouts -->
+        <% workouts.forEach(m => { %>
         <tr>
           <td><%= m.name %></td>
           <td><%= m.muscle %></td>
           <td><%= m.difficulty %></td>
-          <td><%= (new Date(m.date)).toString().split(' ').slice(0, 5).join(' ') %></td>
           <td>
-            <form action="/workouts/exercise/<%= m._id %>?_method=DELETE" method="POST">
+            <%= (new Date(m.date)).toString().split(' ').slice(0, 5).join(' ')
+            %>
+          </td>
+          <td>
+            <!-- Form for deleting workout -->
+            <form
+              action="/workouts/exercise/<%= m._id %>?_method=DELETE"
+              method="POST"
+            >
               <button class="btn-2" type="submit">Delete</button>
             </form>
+            <!-- Form for editing workout -->
             <form method="get" action="/workouts/exercise/<%= m._id %>/edit">
-                <button class="btn-2" type="submit">Edit</button>
+              <button class="btn-2" type="submit">Edit</button>
+            </form>
           </td>
         </tr>
-      <% }) %>
-    </table>
-    </body>
-    </html>
+        <% }) %>
+      </table>
+    </section>
+  </body>
+</html>
