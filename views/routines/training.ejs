@@ -18,7 +18,6 @@
           <ul>
             <!-- Button to create a new routine -->
             <li><a href="/routines/new" class="button">New Routine</a></li>
-            <li><a href="/routines/new" class="button">New Routine</a></li>
             <li><a href="../workouts" class="button">back</a></li>
           </ul>
         </div>
@@ -26,7 +25,7 @@
     </div>
   </section>
   <!-- Secondary heading, consider giving it a unique purpose -->
-  <h1>Training Routines</h1>
+  <h1 class="title-size">Training Routines</h1>
   <table>
     <thead>
       <tr>
@@ -55,14 +54,14 @@
           <td><%= routine.reps %></td>
           <td>
             <!-- Edit button linking to routine's edit page -->
-            <a href="/routines/<%= routine._id %>/edit" class="button btn-2">Edit</a>
-            <!-- Form for deleting a routine -->
-            <form action="/routines/<%= routine._id %>?_method=DELETE" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <!-- Other form inputs here -->
-            </form>
-            
-            <button class="btn-2" type="submit">Delete</button>
+            <div class="button-container">
+              <a href="/routines/<%= routine._id %>/edit" class="button btn-2">Edit</a>
+              <!-- Form for deleting a routine -->
+              <form action="/routines/<%= routine._id %>?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="btn-2" type="submit">Delete</button>
+              </form>
+            </div>
           </td>
          
           

@@ -207,11 +207,7 @@ form {
   padding: 0;
 }
 
-.btn-new {
-margin-top: 20px;
-margin-left: 10px;
-font-size: 18px;
-}
+
 
 .btn-2:disabled {
   cursor: default;
@@ -238,6 +234,11 @@ font-size: 18px;
 .btn-2:hover:before {
   --progress: 0;
 }
+
+.btn-new {
+  font-size: 18px;
+  margin: 5px;
+  }
 
 input {
   color: black;
@@ -269,7 +270,7 @@ input {
 }
 
 select {
-  color: black; /* Set the desired color */
+  color: black; 
   font-size: 18px;
   text-align: center;
 }
@@ -279,4 +280,35 @@ select {
   margin-top: 10px;
   padding: 10px;
   font-size: 34px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; 
+  justify-content: center;
+}
+button,
+.btn-2 {
+  display: inline-block; 
+  margin: 0;
+  font-size: 20px;
+}
+
+
+.edit-form label,
+.edit-form input[type="text"],
+.edit-form input[type="number"],
+.edit-form input[type="checkbox"],
+.edit-form span {
+  font-size: 20px;
+  text-align: center;
+  margin: 7px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.btn-size {
+  display: flex;
+  margin-top: 10px;
+ margin-left: 10px;
 }

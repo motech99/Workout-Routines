@@ -26,11 +26,11 @@
   </section>
   
   <!-- Secondary heading for the creation form -->
-  <h1>Create New Routine</h1>
+  <h1 class="title-size">Create New Routine</h1>
   <div class="text-container">
 
     <!-- Form to create a new routine -->
-    <form action="/routines" method="POST">
+    <form class="edit-form" action="/routines" method="POST">
       <div>
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -52,7 +52,7 @@
           <% }); %>
         </div>
         <!-- Button to submit the form and create the routine -->
-        <button type="submit">Create Routine</button>
+        <button class="btn-2" type="submit">Create Routine</button>
       </form>
     </div>
     </body>

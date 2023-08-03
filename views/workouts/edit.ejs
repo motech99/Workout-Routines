@@ -21,6 +21,7 @@
         </div>
       </nav>
     </section>
+    <h1 class="title-size">Edit Workout</h1>
     <form  action="/workouts/exercise/<%= workout._id %>?_method=PUT" method="POST">
         <label for="name">Exercise Name:</label>
         <input type="text" name="name" id="name" value="<%= workout.name %>">
@@ -37,8 +38,9 @@
     
         <label for="date">Date:</label>
         <input type="datetime-local" name="date" id="date" value="<%= workout.date.toISOString().slice(0, 16) %>">
-    
-        <button type="submit">Save Changes</button>
+        <div class="btn-size">
+          <button class="btn-2 btn-new" type="submit">Save Changes</button>
+        </div>
       </form>
     </body>
     </html>

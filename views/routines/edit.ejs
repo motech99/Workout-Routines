@@ -13,7 +13,7 @@
       <nav>
         <div class="heading">
           <!-- Main heading for the page -->
-          <h1>Workout Plans</h1>
+          <h1>Edit Routine</h1>
         </div>
         <div class="nav-wrapper">
           <ul>
@@ -25,10 +25,10 @@
     </div>
   </section>
   <!-- Secondary heading for the edit form -->
-  <h1>Edit Routine</h1>
+  <h1 class="title-size">Edit Routine</h1>
 
   <!-- Form to edit an existing routine -->
-  <form action="/routines/<%= routine._id %>?_method=PUT" method="POST">
+  <form class="edit-form" action="/routines/<%= routine._id %>?_method=PUT" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <div>
       <label for="name">Name:</label>
@@ -52,7 +52,7 @@
       <% }); %>
     </div>
     <!-- Button to submit the form and update the routine -->
-    <button type="submit">Update</button>
+    <button class="btn-2" type="submit">Update</button>
   </form>
 </body>
 </html>
