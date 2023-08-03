@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Workout</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body class="loaded">
+    <section>
+      <div class="main-section">
+        <nav>
+          <div class="heading">
+            <h1>Edit Workout</h1>
+          </div>
+          <div class="nav-wrapper">
+            <ul>
+              <li><a href="/workouts/exercise" class="button">back</a></li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <form method="post" action="/workouts/exercise/<%= workout._id %>?_method=PUT">
+        <label for="name">Exercise Name:</label>
+        <input type="text" name="name" id="name" value="<%= workout.name %>">
+    
+        <label for="muscle">Muscle Group:</label>
+        <select name="muscle" id="muscle">
+            <%- include('../partials/muscle') %>
+        </select>
+    
+        <label for="difficulty">Difficulty:</label>
+        <select name="difficulty" id="difficulty">
+            <%- include('../partials/difficulty') %>
+        </select>
+    
+        <label for="date">Date:</label>
+        <input type="datetime-local" name="date" id="date" value="<%= workout.date.toISOString().slice(0, 16) %>">
+    
+        <button type="submit">Save Changes</button>
+      </form>
+    </body>
+    </html>

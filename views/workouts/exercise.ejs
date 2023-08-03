@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body class="loaded">
+    <section>
+      <div class="main-section">
+        <nav>
+          <div class="heading">
+            <h1>All Workouts</h1>
+          </div>
+          <div class="nav-wrapper">
+            <ul>
+              <li><a href="/workouts" class="button">back</a></li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </section>
+    <section>
+      <h1>Workouts</h1>
+      <table>
+      <tr>
+        <th>Exercise Name</th>
+        <th>Muscle Group</th>
+        <th>Difficulty</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+      <% workouts.forEach(m => { %>
+        <tr>
+          <td><%= m.name %></td>
+          <td><%= m.muscle %></td>
+          <td><%= m.difficulty %></td>
+          <td><%= (new Date(m.date)).toString().split(' ').slice(0, 5).join(' ') %></td>
+          <td>
+            <form method="post" action="/workouts/exercise/<%= m._id %>?_method=DELETE">
+              <button class="btn-2" type="submit">Delete</button>
+            </form>
+            <form method="get" action="/workouts/exercise/<%= m._id %>/edit">
+                <button class="btn-2" type="submit">Edit</button>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+    </body>
+    </html>

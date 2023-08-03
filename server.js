@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
+var methodOverride = require('method-override');
+var MongoStore = require('connect-mongo');
 
 require('dotenv').config();
 
@@ -14,6 +16,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var mainPageRouter = require('./routes/main-page');
 var exercisesRouter = require('./routes/exercises');
+var routinesRouter = require('./routes/routines');
 
 var path = require('path');
 
@@ -42,12 +45,16 @@ app.use(function (req, res, next){
   next();
 });
 
-
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/workouts', mainPageRouter);
 app.use('/workouts', exercisesRouter);
+app.use('/routines', routinesRouter);
+MongoStore.create({
+  mongoUrl: process.env.DATABASE_URL
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
