@@ -28,7 +28,7 @@
   <h1>Edit Routine</h1>
 
   <!-- Form to edit an existing routine -->
-  <form action="/routines/<%= routine._id %>" method="POST">
+  <form action="/routines/<%= routine._id %>?_method=PUT" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <div>
       <label for="name">Name:</label>
@@ -52,7 +52,7 @@
       <% }); %>
     </div>
     <!-- Button to submit the form and update the routine -->
-    <button type="submit">Update Routine</button>
+    <button type="submit">Update</button>
   </form>
 </body>
 </html>

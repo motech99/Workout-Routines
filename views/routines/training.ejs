@@ -19,7 +19,7 @@
             <!-- Button to create a new routine -->
             <li><a href="/routines/new" class="button">New Routine</a></li>
             <li><a href="/routines/new" class="button">New Routine</a></li>
-            <li><a href="/workout" class="button">back</a></li>
+            <li><a href="../workouts" class="button">back</a></li>
           </ul>
         </div>
       </nav>
@@ -55,13 +55,17 @@
           <td><%= routine.reps %></td>
           <td>
             <!-- Edit button linking to routine's edit page -->
-            <a href="/routines/<%= routine._id %>/edit" class="button">Edit</a>
+            <a href="/routines/<%= routine._id %>/edit" class="button btn-2">Edit</a>
             <!-- Form for deleting a routine -->
-            <form action="/routines/<%= routine._id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit" class="button">Delete</button>
+            <form action="/routines/<%= routine._id %>?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <!-- Other form inputs here -->
             </form>
+            
+            <button class="btn-2" type="submit">Delete</button>
           </td>
+         
+          
         </tr>
       <% }); %>
     </tbody>

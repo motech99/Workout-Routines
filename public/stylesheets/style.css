@@ -205,8 +205,14 @@ form {
   margin: 0;
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
   padding: 0;
-
 }
+
+.btn-new {
+margin-top: 20px;
+margin-left: 10px;
+font-size: 18px;
+}
+
 .btn-2:disabled {
   cursor: default;
 }
@@ -233,7 +239,44 @@ form {
   --progress: 0;
 }
 
-
 input {
   color: black;
+}
+
+/* Center text within table cells */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+}
+
+label {
+  font-size: 18px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+input {
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+}
+
+select {
+  color: black; /* Set the desired color */
+  font-size: 18px;
+  text-align: center;
+}
+
+.title-size {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 34px;
 }
