@@ -35,3 +35,14 @@ This web application is part of a full-stack project designed to manage workout 
   
 - Templating Engine:
   - EJS
+
+ 
+  ## Attribution
+
+Icons used in this project were provided by Icons8:
+
+- [Barbell Icon](https://icons8.com/icon/1786/barbell)
+- [Calendar Icon](https://icons8.com/icon/67438/calendar)
+- [Exercise Icon](https://icons8.com/icon/3728/exercise)
+
+These icons are licensed under [Creative Commons Attribution-NoDerivs 3.0 Unported](https://creativecommons.org/licenses/by-nd/3.0/).

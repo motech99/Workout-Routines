@@ -41,7 +41,7 @@ async function deleteWorkout(req, res) {
     // Find the workout by its ID and createdBy field
     const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
     if (!workout) {
-      return res.status(404).json({ message: 'Workout not found' });
+      return res.status(404).json({ message: `You didn't create this workout. This workout was created by another user` });
     }
 
     // Remove the workout
@@ -61,7 +61,7 @@ async function editForm(req, res) {
     // Find the workout by its ID and createdBy field
     const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
     if (!workout) {
-      return res.status(404).json({ message: 'Workout not found' });
+      return res.status(404).json({ message: `You didn't create this workout. This workout was created by another user` });
     }
 
     res.render('workouts/edit', { workout });
@@ -79,7 +79,7 @@ async function update(req, res) {
     // Find the workout by its ID and createdBy field
     const workout = await Workout.findOne({ _id: workoutId, createdBy: req.user._id });
     if (!workout) {
-      return res.status(404).json({ message: 'Workout not found' });
+      return res.status(404).json({ message: `You didn't create this workout. This workout was created by another user` });
     }
 
     // Update the workout
