@@ -1,4 +1,4 @@
-Workout Routines Web Application
+## Workout Routines Web Application
 
 This web application is part of a full-stack project designed to manage workout routines. Users can log in to add individual exercises and create custom workout routines. The application supports all CRUD (Create, Read, Update, Delete) operations for both exercises and routines.
 
