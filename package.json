@@ -25,5 +25,11 @@
     "passport-google-oauth": "^2.0.0",
     "passport-google-oauth2": "^0.2.0",
     "save": "^2.9.0"
-  }
+  },
+  "description": "This web application is part of a full-stack project designed to manage workout routines. Users can log in to add individual exercises and create custom workout routines. The application supports all CRUD (Create, Read, Update, Delete) operations for both exercises and routines.",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
