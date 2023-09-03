@@ -5,37 +5,52 @@ This web application is part of a full-stack project designed to manage workout 
 ## Table of Contents
 
 - [Key Features](#features)
+- [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 
 ## Key Features
 
- User Login; Users have the ability to create accounts and log in to access all the functionalities of the application.
- Exercise Organisation; Users can add exercises to the systems database.
- Routine Customisation; Users can personalise their workout routines by selecting desired exercises.
- Comprehensive Operations; The application fully supports creating, viewing, updating and deleting exercises and routines.
+ #### User Login:
+ Users have the ability to create accounts and log in to access all the functionalities of the application.
  
+ #### Exercise Organisation:
+ Users can add exercises to the systems database.
+ Routine Customisation; Users can personalise their workout routines by selecting desired exercises.
+ #### Comprehensive Operations:
+ The application fully supports creating, viewing, updating and deleting exercises and routines.
+ 
+## Screenshots
+![1](https://i.imgur.com/tCglJ54.png) 
+![2](https://i.imgur.com/Q2zOVWG.png) 
+![3](https://i.imgur.com/jmvsx1R.png) 
+![4](https://i.imgur.com/A0p5COs.png) 
+![5](https://i.imgur.com/coKenGL.png) 
+![6](https://i.imgur.com/3KSVu7P.png) 
+
+
+
+
  ## Technologies Used
 
-  Frontend:
+### Frontend:
   - HTML
   - CSS
   - JavaScript
   
-- Backend:
+### Backend:
   - Node.js
   - Express.js
   - Mongoose
   
-- Database:
+### Database:
   - MongoDB (MongoDB Atlas)
   
-- User Authentication:
+### User Authentication:
   - Passport.js
   - Google Oauth 2.0
   
-- Templating Engine:
+### Templating Engine:
   - EJS
-
  
   ## Attribution
 
