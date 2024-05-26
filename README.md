@@ -4,7 +4,7 @@ This web application is part of a full-stack project designed to manage workout 
 
 ## Link for the App
 
-**Visit Workout Routines by clicking here** [workout App](https://workout-routines-15a2ea93107f.herokuapp.com/)
+**Visit Workout Routines by clicking here** [workout App](https://workout-application-aa178e9d6b2f.herokuapp.com/)
 
 ## Table of Contents
 
